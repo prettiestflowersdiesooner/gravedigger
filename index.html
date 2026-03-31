@@ -30,12 +30,12 @@
 </body>
 </html>
 <!-- Shovel emoji button triggers audio -->
-<button onclick="document.getElementById('tourAudio').play(); this.style.display='none';" class="emoji-button">
-  🪏
+<button onclick="fadeOutButton()" class="emoji-button" id="shovelButton">
+  ❤︎
 </button>
 
 <!-- Audio file -->
-<audio id="tourAudio" loop>
+<audio id="Touraudio" loop>
   <source src="T.mp3" type="audio/mpeg">
 </audio>
 
@@ -46,6 +46,7 @@
     font-size: 3em;     /* big emoji */
     cursor: pointer;    /* pointer on hover */
     color: white;       /* emoji color */
+    transition: opacity 1s ease; /* smooth fade */
   }
   .emoji-button:focus {
     outline: none;      /* remove focus outline */
@@ -55,3 +56,12 @@
   }
 </style>
 
+<script>
+  function fadeOutButton() {
+    const btn = document.getElementById('shovelButton');
+    const audio = document.getElementById('Taudio');
+    audio.play();
+    btn.style.opacity = '0';       // fade out
+    setTimeout(() => btn.style.display = 'none', 1000); // hide after fade
+  }
+</script>
