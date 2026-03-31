@@ -29,10 +29,29 @@
   <p>2027</p>
 </body>
 </html>
-<button onclick="document.getElementById('tourAudio').play(); this.style.display='none';">
+<!-- Shovel emoji button triggers audio -->
+<button onclick="document.getElementById('tourAudio').play(); this.style.display='none';" class="emoji-button">
   🪏
 </button>
 
+<!-- Audio file -->
 <audio id="tourAudio" loop>
   <source src="T.mp3" type="audio/mpeg">
 </audio>
+
+<style>
+  .emoji-button {
+    background: none;   /* remove white box */
+    border: none;       /* no border */
+    font-size: 3em;     /* big emoji */
+    cursor: pointer;    /* pointer on hover */
+    color: white;       /* emoji color */
+  }
+  .emoji-button:focus {
+    outline: none;      /* remove focus outline */
+  }
+  .emoji-button:hover {
+    opacity: 0.7;       /* subtle hover effect */
+  }
+</style>
+
